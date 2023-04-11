@@ -58,7 +58,7 @@ thumbImage.forEach((selected) => {
   selected.addEventListener("click", () => {
     mainImage.setAttribute(
       "src",
-      `images/image-product-${selected.dataset.id}.jpg`
+      `./images/image-product-${selected.dataset.id}.jpg`
     );
     render();
   });
@@ -72,8 +72,8 @@ const plusBtn = document.getElementById("add");
 function render() {
   thumbImage.forEach((selected) => {
     if (
-      `images/image-product-${selected.dataset.id}.jpg` ===
-      mainImage.getAttribute("src")
+      `./images/image-product-${selected.dataset.id}.jpg` ===
+      '.'+mainImage.getAttribute("src")
     ) {
       selected.style.border = "2px solid var(--primary-orange)";
       selected.style.opacity = ".5";
@@ -97,13 +97,13 @@ function render() {
     cartContentsDisplay.innerHTML = `
     
     <article class="cart-item">
-    <img src="images/image-product-1-thumbnail.jpg" alt="thumb" class="thumb-img">
+    <img src="../images/image-product-1-thumbnail.jpg" alt="thumb" class="thumb-img">
     <p>
       Fall limited Edition Sneakers <br>
       $125x${itemQuantity}
       <strong>$${125 * itemQuantity}</strong> 
     </p>
-    <img src="./images/icon-delete.svg" alt="delete" width="15px" class="delete">
+    <img src="../images/icon-delete.svg" alt="delete" width="15px" class="delete">
   </article>
   <p class="ckeckout-btn">Checkout</p>
     
